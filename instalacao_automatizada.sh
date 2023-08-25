@@ -21,6 +21,8 @@ sudo apt upgrade -y 2>> "$LOG_FILE" || handle_error "Falha ao atualizar pacotes.
 sudo apt dist-upgrade -y 2>> "$LOG_FILE" || handle_error "Falha ao atualizar pacotes da distribuicao."
 sudo apt install ubuntu-restricted-extras -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar os complementos e codecs extras."
 
+# ---------------------------------------------------
+
 # Instalar programas via apt
 sudo apt install gdebi -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gdebi via apt."
 sudo apt install synaptic -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar synaptic via apt."
@@ -32,10 +34,38 @@ sudo apt install nautilus-admin -y 2>> "$LOG_FILE" || handle_error "Falha ao ins
 sudo apt install imagemagick nautilus-image-converter -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar imagemagick nautilus-image-converter via apt"
 sudo apt install chrome-gnome-shell -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar chrome-gnome-shell via apt"
 sudo apt install gnome-shell-extensions -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-shell-extensions via apt"
+sudo apt install git -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar git via apt"
+sudo apt install git-lfs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar git-lfs via apt"
+sudo apt install nodejs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar nodejs via apt"
+sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar qbitorrent via apt"
+# Instalar KDE Connect
+sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect."
+
 
 # Limpar cache e pacotes não necessários
 sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
 sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
+
+# -----------------------------------------------------------
+
+# Instalar Google Chrome Stable
+wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo gdebi chrome.deb -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
+rm chrome.deb
+
+# Instalar Microsoft Edge Stable
+wget -O msedge.deb https://go.microsoft.com/fwlink/?linkid=2069324
+sudo gdebi msedge.deb -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge Stable."
+rm msedge.deb
+
+# Instalar GitHub Desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
+sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
+
+
+# -----------------------------------------------------------
 
 # Instalar Flatpak e adicionar o Flathub
 sudo apt install flatpak -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Flatpak."
@@ -47,6 +77,8 @@ flatpak install com.jetbrains.IntelliJ-IDEA-Community -y 2>> "$LOG_FILE" || hand
 flatpak install com.calibre_ebook.calibre -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.calibre_ebook.calibre via Flatpak."
 flatpak install com.valvesoftware.Steam -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.valvesoftware.Steam via Flatpak."
 flatpak install org.eclipse.Java -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar org.eclipse.Java via Flatpak."
+
+# -----------------------------------------------------------
 
 # Instalar Snap
 sudo apt install snapd -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Snap."
