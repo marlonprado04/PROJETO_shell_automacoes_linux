@@ -54,7 +54,7 @@ sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver depend
 rm msedge.deb
 
 # Instalar Google Chrome Stable
-wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
 sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
 rm chrome.deb

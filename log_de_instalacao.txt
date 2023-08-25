@@ -1,6 +1,17 @@
-[1mdpkg-deb:[0m [1;31merro:[0m 'msedge.deb' não é um arquivo de formato Debian
-[1mdpkg:[0m erro ao processar o arquivo msedge.deb (--install):
- o subprocesso dpkg-deb --control retornou erro do status de saída 2
-Erros foram encontrados durante o processamento de:
- msedge.deb
-Erro: Falha ao instalar Microsoft Edge.
+Ignorando: org.flathub.flatpak-external-data-checker/x86_64/stable já está instalado
+Ignorando: com.jetbrains.IntelliJ-IDEA-Community/x86_64/stable já está instalado
+Ignorando: com.calibre_ebook.calibre/x86_64/stable já está instalado
+Ignorando: com.valvesoftware.Steam/x86_64/stable já está instalado
+Ignorando: org.eclipse.Java/x86_64/stable já está instalado
+Ignorando: io.missioncenter.MissionCenter/x86_64/stable já está instalado
+snap "snap-store" is already installed, see 'snap help refresh'
+snap "code" is already installed, see 'snap help refresh'
+snap "curl" is already installed, see 'snap help refresh'
+snap "discord" is already installed, see 'snap help refresh'
+snap "gimp" is already installed, see 'snap help refresh'
+snap "netbeans" is already installed, see 'snap help refresh'
+snap "btop" is already installed, see 'snap help refresh'
+snap "htop" is already installed, see 'snap help refresh'
+snap "vlc" is already installed, see 'snap help refresh'
+snap "wps-office-all-lang-no-internet" is already installed, see 'snap
+       help refresh'
