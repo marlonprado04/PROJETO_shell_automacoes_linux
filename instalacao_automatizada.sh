@@ -50,12 +50,14 @@ sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
 
 # Instalar Google Chrome Stable
 wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo gdebi chrome.deb -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
+sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
+sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
 rm chrome.deb
 
 # Instalar Microsoft Edge Stable
 wget -O msedge.deb https://go.microsoft.com/fwlink/?linkid=2069324
-sudo gdebi msedge.deb -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge Stable."
+sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge Stable."
+sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge Stable."
 rm msedge.deb
 
 # Instalar GitHub Desktop
@@ -87,14 +89,5 @@ sudo snap install snap-store 2>> "$LOG_FILE" || handle_error "Falha ao instalar 
 # Instalar programas via Snap
 sudo snap install code 2>> "$LOG_FILE" || handle_error "Falha ao instalar code via Snap."
 sudo snap install curl 2>> "$LOG_FILE" || handle_error "Falha ao instalar curl via Snap."
-sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha ao instalar discord via Snap."
-sudo snap install gimp 2>> "$LOG_FILE" || handle_error "Falha ao instalar gimp via Snap."
-sudo snap install netbeans 2>> "$LOG_FILE" || handle_error "Falha ao instalar netbeans via Snap."
-sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
-
-# Limpar cache e pacotes não necessários
-sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
-sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
-
-echo "Instalação concluída!"
+sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha
 
