@@ -48,7 +48,7 @@ sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
 # -----------------------------------------------------------
 
 # Instalar Microsoft Edge
-wget -O msedge.deb https://go.microsoft.com/fwlink?linkid=2149051&brand=M102
+wget -O msedge.deb "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge."
 sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge."
 rm msedge.deb
