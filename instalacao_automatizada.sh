@@ -38,7 +38,6 @@ sudo apt install git -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar git v
 sudo apt install git-lfs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar git-lfs via apt"
 sudo apt install nodejs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar nodejs via apt"
 sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar qbitorrent via apt"
-# Instalar KDE Connect
 sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect via apt."
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 
@@ -47,6 +46,12 @@ sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes
 sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
 
 # -----------------------------------------------------------
+
+# Instalar Microsoft Edge
+wget -O msedge.deb https://go.microsoft.com/fwlink?linkid=2149051&brand=M102
+sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge."
+sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge."
+rm msedge.deb
 
 # Instalar Google Chrome Stable
 wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
