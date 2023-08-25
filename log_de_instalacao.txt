@@ -1,8 +1,0 @@
-Ignorando: org.flathub.flatpak-external-data-checker/x86_64/stable já está instalado
-Ignorando: com.jetbrains.IntelliJ-IDEA-Community/x86_64/stable já está instalado
-Ignorando: com.calibre_ebook.calibre/x86_64/stable já está instalado
-Ignorando: com.valvesoftware.Steam/x86_64/stable já está instalado
-Ignorando: org.eclipse.Java/x86_64/stable já está instalado
-snap "snap-store" is already installed, see 'snap help refresh'
-snap "code" is already installed, see 'snap help refresh'
-snap "curl" is already installed, see 'snap help refresh'
