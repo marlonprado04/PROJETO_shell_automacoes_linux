@@ -39,8 +39,8 @@ sudo apt install git-lfs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar g
 sudo apt install nodejs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar nodejs via apt"
 sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar qbitorrent via apt"
 # Instalar KDE Connect
-sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect."
-
+sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect via apt."
+sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 
 # Limpar cache e pacotes não necessários
 sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
