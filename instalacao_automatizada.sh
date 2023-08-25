@@ -54,12 +54,6 @@ sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Googl
 sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
 rm chrome.deb
 
-# Instalar Microsoft Edge Stable
-wget -O msedge.deb https://go.microsoft.com/fwlink/?linkid=2069324
-sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge Stable."
-sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge Stable."
-rm msedge.deb
-
 # Instalar GitHub Desktop
 wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'

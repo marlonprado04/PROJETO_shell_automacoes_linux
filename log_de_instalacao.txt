@@ -1,0 +1,6 @@
+[1mdpkg-deb:[0m [1;31merro:[0m 'msedge.deb' não é um arquivo de formato Debian
+[1mdpkg:[0m erro ao processar o arquivo msedge.deb (--install):
+ o subprocesso dpkg-deb --control retornou erro do status de saída 2
+Erros foram encontrados durante o processamento de:
+ msedge.deb
+Erro: Falha ao instalar Microsoft Edge Stable.
