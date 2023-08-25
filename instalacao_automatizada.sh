@@ -83,5 +83,14 @@ sudo snap install snap-store 2>> "$LOG_FILE" || handle_error "Falha ao instalar 
 # Instalar programas via Snap
 sudo snap install code 2>> "$LOG_FILE" || handle_error "Falha ao instalar code via Snap."
 sudo snap install curl 2>> "$LOG_FILE" || handle_error "Falha ao instalar curl via Snap."
-sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha
+sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha ao instalar discord via Snap."
+sudo snap install gimp 2>> "$LOG_FILE" || handle_error "Falha ao instalar gimp via Snap."
+sudo snap install netbeans 2>> "$LOG_FILE" || handle_error "Falha ao instalar netbeans via Snap."
+sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
+
+# Limpar cache e pacotes não necessários
+sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
+sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
+
+echo "Instalação concluída!"
 
