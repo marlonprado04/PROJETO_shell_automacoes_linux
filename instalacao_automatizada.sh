@@ -41,11 +41,13 @@ sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instal
 sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect via apt."
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 
-# Limpar cache e pacotes não necessários
-sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
-sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
-
 # -----------------------------------------------------------
+
+# Instalar GitHub Desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
+sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
 
 # Instalar Microsoft Edge
 wget -O msedge.deb "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
@@ -58,12 +60,6 @@ wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_curr
 sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
 sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
 rm chrome.deb
-
-# Instalar GitHub Desktop
-wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
-sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
-sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
 
 
 # -----------------------------------------------------------
@@ -96,6 +92,7 @@ sudo snap install btop 2>> "$LOG_FILE" || handle_error "Falha ao instalar btop v
 sudo snap install htop 2>> "$LOG_FILE" || handle_error "Falha ao instalar htop via Snap."
 sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
 sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_error "Falha ao instalar wps-office-all-lang-no-internet via Snap."
+sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
 
 
 # Limpar cache e pacotes não necessários
