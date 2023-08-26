@@ -2,13 +2,20 @@
 
 Meus scripts e automações pessoais para lidar com configurações do sistema Ubuntu
 
-## Instruções
+## Índice
 
-### Instalação automatizada de programas
+- [Automações](#automações)
+  - [Índice](#índice)
+  - [Instalação automatizada de programas](#instalação-automatizada-de-programas)
+    - [Passos para execução](#passos-para-execução)
+    - [Lista de programas instalados](#lista-de-programas-instalados)
+  - [Configuração automatizada das extensões Gnome](#configuração-automatizada-das-extensões-gnome)
 
-Basta executar o arquivo `instalacao_automatizada` que ele fará o download de todos os programas que faço uso em meu computador, incluindo o suporte a `Flatpak` e `Snap`.
+## Instalação automatizada de programas
 
-Para executar:
+Para a instalação automatizada dos programas para o Ubuntu, basta executar o arquivo `instalacao_automatizada` que ele fará o download de todos os programas que faço uso em meu computador, incluindo o suporte a `Flatpak` e `Snap` junto dos programas que utilizo nestas versões de empacotamento.
+
+### Passos para execução
 
 1. Abrir um terminal na pasta onde o arquivo se encontra
 2. Utilizar o comando `sh instalacao_automatizada`
@@ -19,7 +26,57 @@ Abaixo uma demonstração de uso:
 
 ![Demonstração de uso da instalação automatizada](./assets/demonstration.gif)
 
-### Configuração automatizada das extensões Gnome
+### Lista de programas instalados
+
+__Instalação via APT:__
+
+1. __gdebi__: Instala pacotes Debian (.deb) e suas dependências.
+2. __synaptic__: Gerenciador de pacotes gráfico para o sistema APT.
+3. __gnome-software__: Central de Programas do GNOME.
+4. __gnome-sushi__: Oferece visualizações rápidas de arquivos.
+5. __folder-color__: Personalização de cores de pastas no GNOME.
+6. __nautilus-admin__: Opções administrativas no menu de contexto do Nautilus.
+7. __imagemagick__ e __nautilus-image-converter__: Manipulação e conversão de imagens integradas ao Nautilus.
+8. __chrome-gnome-shell__: Integração de extensões GNOME com Chrome/Chromium.
+9. __gnome-shell-extensions__: Pacote de extensões úteis para o GNOME Shell.
+10. __git__: Sistema de controle de versão distribuído.
+11. __git-lfs__: Gerenciamento de arquivos grandes no Git.
+12. __nodejs__: Ambiente de tempo de execução JavaScript.
+13. __qbittorrent__: Cliente de torrent.
+14. __kdeconnect__: Integração entre dispositivos Android e o ambiente KDE.
+15. __gparted__: Utilitário de particionamento de discos.
+16. __bat__: Visualizador de código com realce de sintaxe.
+
+__Instalação via .deb:__
+
+1. __Microsoft Edge__: Navegador de web da Microsoft.
+2. __Google Chrome__: Navegador de web da Google.
+3. __Microsoft Edge__: Interface gráfica para gerenciar repositórios Git e interagir com o GitHub.
+
+__Instalação via Flatpak:__
+
+1. __com.jetbrains.IntelliJ-IDEA-Community__: IDE para desenvolvimento Java.
+2. __com.calibre_ebook.calibre__: Gerenciamento de eBooks.
+3. __com.valvesoftware.Steam__: Plataforma de distribuição digital de jogos.
+4. __org.eclipse.Java__: IDE para desenvolvimento Java.
+5. __io.missioncenter.MissionCenter__: Gerenciamento de tarefas e produtividade.
+
+__Instalação via Snap:__
+
+1. __snap-store__: Loja de aplicativos Snap.
+2. __code__: Visual Studio Code, editor de código fonte.
+3. __curl__: Ferramenta de linha de comando para transferir dados com URLs.
+4. __discord__: Plataforma de comunicação para gamers.
+5. __gimp__: Programa de manipulação de imagens.
+6. __netbeans__: IDE para desenvolvimento de software.
+7. __btop__: Monitor de recursos de sistema em tempo real.
+8. __vlc__: Reprodutor multimídia.
+9. __wps-office-all-lang-no-internet__: Suite de escritório compatível com Microsoft Office.
+10. __motrix__: Gerenciador de downloads.
+11. __tldr__: Páginas de manual simplificadas e de fácil leitura.
+12. __ncdu__: Utilitário de disco com interface de texto interativa.
+
+## Configuração automatizada das extensões Gnome
 
 Para recuperar as `extensoes gnome e suas configurações` é necessário seguir os passos abaixo:
 
