@@ -40,6 +40,8 @@ sudo apt install nodejs -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar no
 sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar qbitorrent via apt"
 sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect via apt."
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
+sudo apt install bat -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar bat via apt."
+
 
 # -----------------------------------------------------------
 
@@ -89,10 +91,11 @@ sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha ao instalar dis
 sudo snap install gimp 2>> "$LOG_FILE" || handle_error "Falha ao instalar gimp via Snap."
 sudo snap install netbeans 2>> "$LOG_FILE" || handle_error "Falha ao instalar netbeans via Snap."
 sudo snap install btop 2>> "$LOG_FILE" || handle_error "Falha ao instalar btop via Snap."
-sudo snap install htop 2>> "$LOG_FILE" || handle_error "Falha ao instalar htop via Snap."
 sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
 sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_error "Falha ao instalar wps-office-all-lang-no-internet via Snap."
 sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
+sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr via Snap."
+sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
 
 
 # Limpar cache e pacotes não necessários
