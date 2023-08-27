@@ -7,9 +7,10 @@ repos_folder="."
 for repo in "$repos_folder"/*; do
     if [ -d "$repo/.git" ]; then
         repo_name=$(basename "$repo")
-        echo "Verificando status do repositório: $repo_name"
+        echo "Repositório: $repo_name"
         (cd "$repo" && git status)
-        echo "----------------------"
+        echo "\n"
+        echo "------------------------------------" 
     fi
 done
 
