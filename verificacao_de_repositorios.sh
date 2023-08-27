@@ -11,6 +11,7 @@ for repo in "$repos_folder"/*; do
         (cd "$repo" && git status)
         echo "\n"
         echo "------------------------------------" 
+        echo "\n"
     fi
 done
 
