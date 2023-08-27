@@ -6,14 +6,15 @@ Meus scripts e automações pessoais para lidar com configurações do sistema U
 
 - [Automações](#automações)
   - [Índice](#índice)
-  - [Instalação automatizada de programas](#instalação-automatizada-de-programas)
+  - [Instalação de programas](#instalação-de-programas)
     - [Passos para execução](#passos-para-execução)
     - [Lista de programas instalados](#lista-de-programas-instalados)
   - [Configuração automatizada das extensões Gnome](#configuração-automatizada-das-extensões-gnome)
+  - [Verificação de repositórios git](#verificação-de-repositórios-git)
 
-## Instalação automatizada de programas
+## Instalação de programas
 
-Para a instalação automatizada dos programas para o Ubuntu, basta executar o arquivo `instalacao_automatizada` que ele fará o download de todos os programas que faço uso em meu computador, incluindo o suporte a `Flatpak` e `Snap` junto dos programas que utilizo nestas versões de empacotamento.
+Para a instalação automatizada dos programas no Ubuntu, basta executar o arquivo `instalacao_de_programas.sh` que ele fará o download de todos os programas que faço uso em meu computador, incluindo o suporte a `Flatpak` e `Snap` junto dos programas que utilizo nestas versões de empacotamento.
 
 ### Passos para execução
 
@@ -24,7 +25,7 @@ Para a instalação automatizada dos programas para o Ubuntu, basta executar o a
 
 Abaixo uma demonstração de uso:
 
-![Demonstração de uso da instalação automatizada](./assets/demonstration.gif)
+![Demonstração de uso da instalação automatizada](./assets/demo_instalacao_de_programas.gif)
 
 ### Lista de programas instalados
 
@@ -93,3 +94,11 @@ Esses passos foram pegos [deste site](https://sempreupdate.com.br/como-sincroniz
 A extensão ficará configurada da seguinte forma:
 
 ![Exemplo da extensão Extension Sync](./assets/example_extensions_sync.png)
+
+## Verificação de repositórios git
+
+Para verificar o status dos repositórios do GitHub instalados localmente, basta adicionar o código `verificacao_de_repositorios.sh` na pasta onde todos os repositórios estão alocados e executá-lo via terminal.
+
+Abaixo um exemplo de uso:
+
+![Demonstração do verificador de repositório](assets/demo_verificacao_de_repositorios.gif)
