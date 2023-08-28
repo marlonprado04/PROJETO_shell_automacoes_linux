@@ -11,6 +11,7 @@ Meus scripts e automações pessoais para lidar com configurações do sistema U
     - [Lista de programas instalados](#lista-de-programas-instalados)
   - [Configuração automatizada das extensões Gnome](#configuração-automatizada-das-extensões-gnome)
   - [Verificação de repositórios git](#verificação-de-repositórios-git)
+  - [Próximos passos](#próximos-passos)
 
 ## Instalação de programas
 
@@ -102,3 +103,7 @@ Para verificar o status dos repositórios do GitHub instalados localmente, basta
 Abaixo um exemplo de uso:
 
 ![Demonstração do verificador de repositório](assets/demo_verificacao_de_repositorios.gif)
+
+## Próximos passos
+
+- [ ] Adicionar tree via apt
