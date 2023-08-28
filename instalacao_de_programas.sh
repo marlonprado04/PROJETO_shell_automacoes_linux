@@ -69,7 +69,7 @@ sudo snap install code --classic 2>> "$LOG_FILE" || handle_error "Falha ao insta
 sudo snap install curl 2>> "$LOG_FILE" || handle_error "Falha ao instalar curl via Snap."
 sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha ao instalar discord via Snap."
 sudo snap install gimp 2>> "$LOG_FILE" || handle_error "Falha ao instalar gimp via Snap."
-sudo snap install netbeans 2>> "$LOG_FILE" || handle_error "Falha ao instalar netbeans via Snap."
+sudo snap install netbeans --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar netbeans via Snap."
 sudo snap install btop 2>> "$LOG_FILE" || handle_error "Falha ao instalar btop via Snap."
 sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
 sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_error "Falha ao instalar wps-office-all-lang-no-internet via Snap."
