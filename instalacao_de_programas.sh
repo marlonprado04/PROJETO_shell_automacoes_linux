@@ -42,28 +42,6 @@ sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instala
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 sudo apt install bat -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar bat via apt."
 
-
-# -----------------------------------------------------------
-
-# Instalar GitHub Desktop
-wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
-sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
-sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
-
-# Instalar Microsoft Edge
-wget -O msedge.deb "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
-sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge."
-sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge."
-rm msedge.deb
-
-# Instalar Google Chrome Stable
-wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
-sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
-rm chrome.deb
-
-
 # -----------------------------------------------------------
 
 # Instalar Flatpak e adicionar o Flathub
@@ -97,6 +75,27 @@ sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motr
 sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr via Snap."
 sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
 
+# -----------------------------------------------------------
+
+# Instalar GitHub Desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
+sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
+
+# Instalar Microsoft Edge
+wget -O msedge.deb "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
+sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge."
+sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge."
+rm msedge.deb
+
+# Instalar Google Chrome Stable
+wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
+sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
+rm chrome.deb
+
+# -----------------------------------------------------------
 
 # Limpar cache e pacotes não necessários
 sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
