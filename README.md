@@ -108,3 +108,4 @@ Abaixo um exemplo de uso:
 
 - [ ] Adicionar tree via apt
 - [ ] Trocar instalação do motrix para apt (abre mais rápido)
+- [ ] Adicionar o grub-customizer
