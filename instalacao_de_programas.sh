@@ -41,6 +41,8 @@ sudo apt install qbittorrent -y 2>> "$LOG_FILE" || handle_error "Falha ao instal
 sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar KDE Connect via apt."
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 sudo apt install bat -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar bat via apt."
+sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar grub-customizer via apt."
+
 
 # -----------------------------------------------------------
 
