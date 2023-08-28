@@ -63,7 +63,7 @@ sudo apt install snapd -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o S
 sudo snap install snap-store 2>> "$LOG_FILE" || handle_error "Falha ao instalar snap-store via Snap."
 
 # Instalar programas via Snap
-sudo snap install code 2>> "$LOG_FILE" || handle_error "Falha ao instalar code via Snap."
+sudo snap install code --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar code via Snap."
 sudo snap install curl 2>> "$LOG_FILE" || handle_error "Falha ao instalar curl via Snap."
 sudo snap install discord 2>> "$LOG_FILE" || handle_error "Falha ao instalar discord via Snap."
 sudo snap install gimp 2>> "$LOG_FILE" || handle_error "Falha ao instalar gimp via Snap."
