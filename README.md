@@ -107,3 +107,4 @@ Abaixo um exemplo de uso:
 ## Próximos passos
 
 - [ ] Adicionar tree via apt
+- [ ] Trocar instalação do motrix para apt (abre mais rápido)
