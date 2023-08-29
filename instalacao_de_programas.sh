@@ -97,6 +97,10 @@ sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Googl
 sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
 rm chrome.deb
 
+# Instalar extensão para "open in VSCode" no Nautilus
+
+sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh)"
+
 # -----------------------------------------------------------
 
 # Limpar cache e pacotes não necessários
