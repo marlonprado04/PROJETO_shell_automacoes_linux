@@ -42,6 +42,8 @@ sudo apt install kdeconnect -y 2>> "$LOG_FILE" || handle_error "Falha ao instala
 sudo apt install gparted -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gparted via apt."
 sudo apt install bat -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar bat via apt."
 sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar grub-customizer via apt."
+sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
+sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
 
 
 # -----------------------------------------------------------
@@ -73,9 +75,9 @@ sudo snap install netbeans --classic 2>> "$LOG_FILE" || handle_error "Falha ao i
 sudo snap install btop 2>> "$LOG_FILE" || handle_error "Falha ao instalar btop via Snap."
 sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via Snap."
 sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_error "Falha ao instalar wps-office-all-lang-no-internet via Snap."
-sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
 sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr via Snap."
 sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
+sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
 
 # -----------------------------------------------------------
 
