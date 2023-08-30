@@ -48,6 +48,8 @@ __Instalação via APT:__
 14. __kdeconnect__: Integração entre dispositivos Android e o ambiente KDE.
 15. __gparted__: Utilitário de particionamento de discos.
 16. __bat__: Visualizador de código com realce de sintaxe.
+17. __gnome-clocks__: Relógios do gnome com função de cronômetro, alarme e etc.
+18. __tree__: Visualizador de árvore de arquivos via terminal.
 
 __Instalação via .deb:__
 
@@ -106,6 +108,6 @@ Abaixo um exemplo de uso:
 
 ## Próximos passos
 
-- [ ] Adicionar tree via apt
-- [ ] Trocar instalação do motrix para apt (abre mais rápido)
+- [x] Adicionar tree via apt
 - [x] Adicionar o grub-customizer
+- [x] Adicionar gnome-clocks (via apt)
