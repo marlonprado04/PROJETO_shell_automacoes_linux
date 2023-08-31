@@ -79,6 +79,7 @@ __Instalação via Snap:__
 10. __motrix__: Gerenciador de downloads.
 11. __tldr__: Páginas de manual simplificadas e de fácil leitura.
 12. __ncdu__: Utilitário de disco com interface de texto interativa.
+13. __simplescreenrecorder__: Gravador de tela para o computador.
 
 ## Configuração automatizada das extensões Gnome
 
@@ -111,3 +112,4 @@ Abaixo um exemplo de uso:
 - [x] Adicionar tree via apt
 - [x] Adicionar o grub-customizer
 - [x] Adicionar gnome-clocks (via apt)
+- [x] Adicionar simplescreenrecorder (via snap)

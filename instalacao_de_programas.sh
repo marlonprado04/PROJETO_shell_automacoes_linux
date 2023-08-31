@@ -78,6 +78,7 @@ sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_erro
 sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr via Snap."
 sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
 sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
+sudo snap install simplescreenrecorder 2>> "$LOG_FILE" || handle_error "Falha ao instalar simplescreenrecorder via Snap."
 
 # -----------------------------------------------------------
 
