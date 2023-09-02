@@ -100,7 +100,6 @@ sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver depend
 rm chrome.deb
 
 # Instalar extensão para "open in VSCode" no Nautilus
-
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh)"
 
 # -----------------------------------------------------------
