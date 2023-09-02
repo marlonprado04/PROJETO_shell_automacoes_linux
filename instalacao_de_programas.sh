@@ -45,7 +45,6 @@ sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao in
 sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
 sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
 
-
 # -----------------------------------------------------------
 
 # Instalar Flatpak e adicionar o Flathub
