@@ -114,7 +114,7 @@ Abaixo um exemplo de uso:
 - [x] Adicionar gnome-clocks (via apt)
 - [x] Adicionar simplescreenrecorder (via snap)
 - [ ] Adicionar curlew conversor de arquivos
-- [ ] Adicionar gnome drawing 
+- [ ] Adicionar gnome drawing
 - [ ] Adicionar authy
 - [ ] Adicionar bitwarden
 - [ ] Adicionar flameshot
