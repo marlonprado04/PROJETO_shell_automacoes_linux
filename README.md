@@ -119,3 +119,4 @@ Abaixo um exemplo de uso:
 - [ ] Adicionar bitwarden
 - [ ] Adicionar flameshot
 - [ ] Adicionar blanket (sons para ambiente)
+- [ ] Adicionar grsync (para sincronizar pastas) (via apt)
