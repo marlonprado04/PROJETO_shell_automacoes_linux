@@ -81,23 +81,26 @@ sudo snap install simplescreenrecorder 2>> "$LOG_FILE" || handle_error "Falha ao
 
 # -----------------------------------------------------------
 
+# Instalar Microsoft Edge
+sudo apt install software-properties-common apt-transport-https wget -y || handle_error "Falha ao instalar os itens necessários para microsoft-edge"
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || handle_error "Falha ao adicionar a chave do microsoft-edge"
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
+sudo apt update
+sudo apt install microsoft-edge-dev -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar microsoft-edge-dev via apt"
+
+sudo apt install -y wget
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - || handle_error "Falha ao adicionar a chave do Google Chrome"
+echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+sudo apt install google-chrome-stable -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Google Chrome via apt"
+
+
 # Instalar GitHub Desktop
 wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
 sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema após adicionar o repositório do GitHub Desktop."
 sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GitHub Desktop."
 
-# Instalar Microsoft Edge
-wget -O msedge.deb "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
-sudo dpkg -i msedge.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge."
-sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Microsoft Edge."
-rm msedge.deb
-
-# Instalar Google Chrome Stable
-wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo dpkg -i chrome.deb 2>> "$LOG_FILE" || handle_error "Falha ao instalar Google Chrome Stable."
-sudo apt install -f -y 2>> "$LOG_FILE" || handle_error "Falha ao resolver dependências do Google Chrome Stable."
-rm chrome.deb
 
 # Instalar extensão para "open in VSCode" no Nautilus
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh)"
