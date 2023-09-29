@@ -9,9 +9,9 @@ for repo in "$repos_folder"/*; do
         repo_name=$(basename "$repo")
         echo "Repositório: $repo_name"
         (cd "$repo" && git status)
-        echo "\n"
+        echo
         echo "------------------------------------" 
-        echo "\n"
+        echo
     fi
 done
 

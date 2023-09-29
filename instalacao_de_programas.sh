@@ -58,6 +58,7 @@ flatpak install --system com.calibre_ebook.calibre -y 2>> "$LOG_FILE" || handle_
 flatpak install --system com.valvesoftware.Steam -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.valvesoftware.Steam via Flatpak."
 flatpak install --system org.eclipse.Java -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar org.eclipse.Java via Flatpak."
 flatpak install --system io.missioncenter.MissionCenter -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar io.missioncenter.MissionCenter via Flatpak."
+flatpak install --system com.github.maoschanz.drawing -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.github.maoschanz.drawing via Flatpak."
 
 # -----------------------------------------------------------
 
