@@ -44,6 +44,7 @@ sudo apt install bat -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar bat v
 sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar grub-customizer via apt."
 sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
 sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
+sudo apt install peek -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar peek via apt."
 
 # -----------------------------------------------------------
 
@@ -59,6 +60,8 @@ flatpak install --system com.valvesoftware.Steam -y 2>> "$LOG_FILE" || handle_er
 flatpak install --system org.eclipse.Java -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar org.eclipse.Java via Flatpak."
 flatpak install --system io.missioncenter.MissionCenter -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar io.missioncenter.MissionCenter via Flatpak."
 flatpak install --system com.github.maoschanz.drawing -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.github.maoschanz.drawing via Flatpak."
+flatpak install --system com.obsproject.Studio -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.obsproject.Studio via Flatpak."
+
 
 # -----------------------------------------------------------
 
@@ -81,7 +84,10 @@ sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motr
 sudo snap install simplescreenrecorder 2>> "$LOG_FILE" || handle_error "Falha ao instalar simplescreenrecorder via Snap."
 sudo snap install authy 2>> "$LOG_FILE" || handle_error "Falha ao instalar authy via Snap."
 sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ticktick via Snap."
-
+sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
+sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
+sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
+sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
 
 # -----------------------------------------------------------
 
