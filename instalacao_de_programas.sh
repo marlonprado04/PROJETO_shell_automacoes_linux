@@ -86,7 +86,6 @@ sudo snap install authy 2>> "$LOG_FILE" || handle_error "Falha ao instalar authy
 sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ticktick via Snap."
 sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
 sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
-sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
 sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
 
 # -----------------------------------------------------------
