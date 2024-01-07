@@ -15,6 +15,9 @@ handle_error() {
 
 echo "Iniciando instalação..."
 
+# Adicionando repositorios necessarios
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao adicionar o repositorio do grub-customizer"
+
 # Atualizar o sistema
 sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema."
 sudo apt upgrade -y 2>> "$LOG_FILE" || handle_error "Falha ao atualizar pacotes."
