@@ -90,6 +90,8 @@ sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ti
 sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
 sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
 sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
+sudo snap install flameshot 2>> "$LOG_FILE" || handle_error "Falha ao instalar flameshot via Snap."
+
 
 # -----------------------------------------------------------
 
