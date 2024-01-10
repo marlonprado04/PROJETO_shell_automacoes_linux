@@ -88,7 +88,7 @@ Para recuperar as `extensoes gnome e suas configurações` é necessário seguir
 1. Instalar a extensão `extensions sync` do Gnome
 2. Abrir meu `gist` do GitHub, [neste link](https://gist.github.com/)
 3. Localizar o `gist` referente às extensões do Gnome
-4. Copiar o `código id` do gist localizado
+4. Copiar o `código id` do gist localizado na URL
 5. Adicionar o código id do gist às configurações da extensão `extensions sync`
 6. Criar um `token` do GitHub que permite a criação de `gist`, [neste link](https://github.com/settings/tokens/new)
 7. Adicionar o token criado nas configurações do `extensions sync`
