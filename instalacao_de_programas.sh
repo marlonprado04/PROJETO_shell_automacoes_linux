@@ -100,7 +100,7 @@ sudo apt install software-properties-common apt-transport-https wget -y || handl
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || handle_error "Falha ao adicionar a chave do microsoft-edge"
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" -y
 sudo apt update
-sudo apt install microsoft-edge-dev -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar microsoft-edge-dev via apt"
+sudo apt install microsoft-edge -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar microsoft-edge via apt"
 
 sudo apt install -y wget
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - || handle_error "Falha ao adicionar a chave do Google Chrome"
