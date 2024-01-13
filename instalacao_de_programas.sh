@@ -17,6 +17,7 @@ echo "Iniciando instalação..."
 
 # Adicionando repositorios necessarios
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao adicionar o repositorio do grub-customizer"
+sudo add-apt-repository universe -y 2>> "$LOG_FILE" || handle_error "Falha ao adicionar o repositorio universe"
 
 # Atualizar o sistema
 sudo apt update 2>> "$LOG_FILE" || handle_error "Falha ao atualizar o sistema."
@@ -27,7 +28,6 @@ sudo apt install ubuntu-restricted-extras -y 2>> "$LOG_FILE" || handle_error "Fa
 # ---------------------------------------------------
 
 # Instalar programas via apt
-sudo apt install gdebi -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gdebi via apt."
 sudo apt install synaptic -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar synaptic via apt."
 sudo apt install gnome-software -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-software via apt."
 sudo apt install gnome-sushi -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-sushi via apt."
@@ -48,7 +48,8 @@ sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao in
 sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
 sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
 sudo apt install peek -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar peek via apt."
-
+sudo apt-get install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
+sudo apt-get install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
 # -----------------------------------------------------------
 
 # Instalar Flatpak e adicionar o Flathub
@@ -57,12 +58,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Instalar programas via Flatpak
 flatpak install --system flathub -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar flathub via Flatpak."
-flatpak install --system com.jetbrains.IntelliJ-IDEA-Community -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.jetbrains.IntelliJ-IDEA-Community via Flatpak."
 flatpak install --system com.calibre_ebook.calibre -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.calibre_ebook.calibre via Flatpak."
 flatpak install --system com.valvesoftware.Steam -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.valvesoftware.Steam via Flatpak."
-flatpak install --system org.eclipse.Java -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar org.eclipse.Java via Flatpak."
-flatpak install --system io.missioncenter.MissionCenter -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar io.missioncenter.MissionCenter via Flatpak."
-flatpak install --system com.github.maoschanz.drawing -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.github.maoschanz.drawing via Flatpak."
 flatpak install --system com.obsproject.Studio -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.obsproject.Studio via Flatpak."
 
 
@@ -83,8 +80,6 @@ sudo snap install vlc 2>> "$LOG_FILE" || handle_error "Falha ao instalar vlc via
 sudo snap install wps-office-all-lang-no-internet 2>> "$LOG_FILE" || handle_error "Falha ao instalar wps-office-all-lang-no-internet via Snap."
 sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr via Snap."
 sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
-sudo snap install motrix 2>> "$LOG_FILE" || handle_error "Falha ao instalar motrix via Snap."
-sudo snap install simplescreenrecorder 2>> "$LOG_FILE" || handle_error "Falha ao instalar simplescreenrecorder via Snap."
 sudo snap install authy 2>> "$LOG_FILE" || handle_error "Falha ao instalar authy via Snap."
 sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ticktick via Snap."
 sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
