@@ -116,9 +116,31 @@ sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nauti
 
 # -----------------------------------------------------------
 
+# Configurar prompt do Bash
+echo '
+# Função para obter o nome do branch Git
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
+}
+
+# Definir o prompt do Bash com o nome do branch Git destacado em vermelho e negrito
+PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]\$(parse_git_branch)\[\033[00m\]\$ "
+' >> ~/.bashrc
+
+# Recarregar o arquivo .bashrc
+source ~/.bashrc
+
+# -----------------------------------------------------------
+
+echo "Instalação concluída."
+
+# -----------------------------------------------------------
+
 # Limpar cache e pacotes não necessários
 sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
 sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
+
+
 
 echo "Instalação concluída!"
 
