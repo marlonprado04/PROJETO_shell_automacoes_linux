@@ -86,7 +86,7 @@ sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okul
 sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
 sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
 sudo snap install flameshot 2>> "$LOG_FILE" || handle_error "Falha ao instalar flameshot via Snap."
-
+sudo snap install bitwarden 2>> "$LOG_FILE" || handle_error "Falha ao instalar bitwarden via Snap."
 
 # -----------------------------------------------------------
 
