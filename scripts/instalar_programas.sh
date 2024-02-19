@@ -50,6 +50,8 @@ sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree
 sudo apt install peek -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar peek via apt."
 sudo apt-get install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
 sudo apt-get install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
+sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
+
 # -----------------------------------------------------------
 
 # Instalar Flatpak e adicionar o Flathub
