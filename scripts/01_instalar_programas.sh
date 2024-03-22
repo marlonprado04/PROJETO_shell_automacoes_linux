@@ -48,9 +48,10 @@ sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao in
 sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
 sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
 sudo apt install peek -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar peek via apt."
-sudo apt-get install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
-sudo apt-get install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
+sudo apt install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
+sudo apt install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
 sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
+sudo apt install net-tools -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar net-tools via apt."
 
 # -----------------------------------------------------------
 
