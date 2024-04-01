@@ -119,12 +119,6 @@ sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao ins
 # Instalar extensão para "open in VSCode" no Nautilus
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh)"
 
-# Instalar cliente One Driver (somente para versão Ubuntu 22.04)
-echo 'deb http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:jstaf.list
-curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_jstaf.gpg > /dev/null
-sudo apt update
-sudo apt install onedriver -y  2>> "$LOG_FILE" || handle_error "Falha ao instalar Onedriver."
-
 
 # -----------------------------------------------------------
 
