@@ -52,6 +52,7 @@ sudo apt install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instal
 sudo apt install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
 sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
 sudo apt install net-tools -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar net-tools via apt."
+sudo apt install neofetch -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar neofetch via apt."
 
 # -----------------------------------------------------------
 
