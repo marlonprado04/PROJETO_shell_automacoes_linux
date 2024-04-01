@@ -65,7 +65,6 @@ flatpak install --system com.calibre_ebook.calibre -y 2>> "$LOG_FILE" || handle_
 flatpak install --system com.valvesoftware.Steam -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.valvesoftware.Steam via Flatpak."
 flatpak install --system com.obsproject.Studio -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar com.obsproject.Studio via Flatpak."
 
-
 # -----------------------------------------------------------
 
 # Instalar Snap
@@ -105,6 +104,8 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key ad
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo apt update
 sudo apt install google-chrome-stable -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Google Chrome via apt"
+sudo apt install dconf-editor -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Dconf Editor via apt"
+
 
 
 # Instalar GitHub Desktop
