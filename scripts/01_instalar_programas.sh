@@ -53,6 +53,7 @@ sudo apt install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instala
 sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
 sudo apt install net-tools -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar net-tools via apt."
 sudo apt install neofetch -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar neofetch via apt."
+sudo apt install flameshot 2>> "$LOG_FILE" || handle_error "Falha ao instalar flameshot via apt."
 
 # -----------------------------------------------------------
 
@@ -89,7 +90,6 @@ sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ti
 # sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
 sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
 sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
-# sudo snap install flameshot 2>> "$LOG_FILE" || handle_error "Falha ao instalar flameshot via Snap."
 sudo snap install bitwarden 2>> "$LOG_FILE" || handle_error "Falha ao instalar bitwarden via Snap."
 
 # -----------------------------------------------------------
