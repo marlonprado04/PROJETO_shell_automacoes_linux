@@ -140,11 +140,6 @@ sudo apt install github-desktop -y 2>> "$LOG_FILE" || handle_error "Falha ao ins
 # Instalar extensão para "open in VSCode" no Nautilus
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh)"
 
-# Instalar OneDrive
-echo 'deb http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:jstaf.list
-curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_jstaf.gpg > /dev/null
-sudo apt update
-sudo apt install onedriver -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar OneDrive."
 
 # ---------------------------------------------------
 # Configurar prompt do Bash
@@ -171,6 +166,7 @@ sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
 echo "Instalação concluída!"
 
 # ---------------------------------------------------
+# Configurar o git
 echo "Iniciando configuração do git"
 git config --global credential.helper store
 git config --global user.email "marlonprado04@gmail.com"
@@ -179,6 +175,7 @@ git config --global init.defaultBranch main
 echo "Git configurado com sucesso!"
 
 # ---------------------------------------------------
+# Adicionar templates de documentos para o contexto do nautilus
 echo "Adicionando templates de documentos"
 mkdir -p ~/Modelos
 touch ~/Modelos/"novo_excel.xls"
@@ -188,6 +185,7 @@ touch ~/Modelos/"novo_txt.txt"
 echo "Templates de documentos adicionados"
 
 # ---------------------------------------------------
+# Configurar montagem automatica da partição NTFS
 echo "Iniciando configuração de montagem da partição NTFS"
 
 # Define o ponto de montagem e o diretório
@@ -223,6 +221,7 @@ sudo mount -a
 echo "Configuração de montagem automática finalizada com sucesso"
 
 # ---------------------------------------------------
+# Adicionar alias para navegação via terminal
 echo "Adicionando aliases"
 alias myntfs="cd /media/NTFS"
 alias mygithub="cd /media/NTFS/00_MEUS_DOCUMENTOS_PC/00_PASTA_PC/03_ESTUDOS/GITHUB"
