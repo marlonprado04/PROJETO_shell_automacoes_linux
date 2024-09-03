@@ -49,7 +49,6 @@ declare -a APT_PACKAGES=(
     gnome-clocks
     tree
     peek
-    exfat-utils
     exfat-fuse
     whois
     net-tools
@@ -57,6 +56,7 @@ declare -a APT_PACKAGES=(
     python3-pip
     copyq
     npm
+    flameshot
 )
 
 for PACKAGE in "${APT_PACKAGES[@]}"; do
@@ -85,29 +85,37 @@ done
 sudo apt install snapd -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Snap."
 sudo snap install snap-store 2>> "$LOG_FILE" || handle_error "Falha ao instalar snap-store via Snap."
 
+# Instalar aplicativos com o Snap
 declare -a SNAP_APPS=(
-    code --classic
+    code
     curl
     discord
     photogimp
-    netbeans --classic
     btop
     vlc
     wps-office-all-lang-no-internet
     tldr
     ncdu
-    authy
     ticktick
-    okular
     spotify
-    obsidian --classic
-    flameshot
     bitwarden
 )
 
 for APP in "${SNAP_APPS[@]}"; do
     sudo snap install "$APP" 2>> "$LOG_FILE" || handle_error "Falha ao instalar $APP via Snap."
 done
+
+# Instalar aplicativos Snap com o parâmetro --classic
+declare -a SNAP_CLASSIC_APPS=(
+    code
+    netbeans
+    obsidian
+)
+
+for APP in "${SNAP_CLASSIC_APPS[@]}"; do
+    sudo snap install "$APP" --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar $APP via Snap com --classic."
+done
+
 
 # ---------------------------------------------------
 # Instalar Anydesk
@@ -121,7 +129,7 @@ sudo apt install software-properties-common apt-transport-https wget -y || handl
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || handle_error "Falha ao adicionar a chave do Microsoft Edge"
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" -y
 sudo apt update
-sudo apt install microsoft-edge-edge -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge via apt"
+sudo apt install microsoft-edge-stable -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Microsoft Edge via apt"
 
 # Instalar Google Chrome
 sudo apt install -y wget
