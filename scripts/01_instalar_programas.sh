@@ -53,6 +53,10 @@ sudo apt install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instala
 sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
 sudo apt install net-tools -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar net-tools via apt."
 sudo apt install neofetch -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar neofetch via apt."
+sudo apt install python3-pip -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar python3-pip via apt."
+sudo apt install copyq -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar copyq via apt."
+sudo snap install intellij-idea-community --classic -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar intellij-idea-community via apt."
+sudo apt install npm -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar npm via apt."
 
 # -----------------------------------------------------------
 
@@ -94,6 +98,13 @@ sudo snap install bitwarden 2>> "$LOG_FILE" || handle_error "Falha ao instalar b
 
 # -----------------------------------------------------------
 
+# Instalar Anydesk
+
+curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/anydesk.gpg
+echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+sudo apt update
+sudo apt install anydesk -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar anydesk via apt"
+
 # Instalar Microsoft Edge
 sudo apt install software-properties-common apt-transport-https wget -y || handle_error "Falha ao instalar os itens necessários para microsoft-edge"
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || handle_error "Falha ao adicionar a chave do microsoft-edge"
@@ -107,7 +118,6 @@ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sud
 sudo apt update
 sudo apt install google-chrome-stable -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Google Chrome via apt"
 sudo apt install dconf-editor -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar o Dconf Editor via apt"
-
 
 
 # Instalar GitHub Desktop
@@ -143,8 +153,6 @@ PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m
 # Recarregar o arquivo .bashrc
 source ~/.bashrc
 
-# -----------------------------------------------------------
-
 echo "Instalação concluída."
 
 # -----------------------------------------------------------
@@ -153,7 +161,72 @@ echo "Instalação concluída."
 sudo apt autoremove -y 2>> "$LOG_FILE" || handle_error "Falha ao remover pacotes não necessários."
 sudo apt clean 2>> "$LOG_FILE" || handle_error "Falha ao limpar cache."
 
-
-
 echo "Instalação concluída!"
 
+# -----------------------------------------------------------------------
+
+echo "Iniciando configuração do git"
+
+git config --global credential.helper store
+git config --global user.email "marlonprado04@gmail.com"
+git config --global user.name "Marlon Prado - Ubuntu"
+git config --global init.defaultBranch main
+
+echo "Git configurado com sucesso!"
+
+# -----------------------------------------------------------------------
+
+echo "Adicionando templates de documentos"
+
+touch ~/Modelos/"novo_excel.xls"
+touch ~/Modelos/"gitkeep.gitkeep"
+touch ~/Modelos/"novo_markdown.md"
+touch ~/Modelos/"novo_txt.txt"
+
+echo "Templates de documentos adicionados"
+
+# -----------------------------------------------------------------------
+
+echo "Inicia configuração de montagem da partição ntfs"
+
+# Define o ponto de montagem e o diretório
+MOUNT_POINT="/media/NTFS"
+fstab_FILE="/etc/fstab"
+
+# Cria o ponto de montagem se não existir
+if [ ! -d "$MOUNT_POINT" ]; then
+    echo "Criando diretório de montagem $MOUNT_POINT"
+    sudo mkdir -p "$MOUNT_POINT"
+fi
+
+# Encontra o UUID da partição NTFS
+UUID=$(sudo blkid | grep ntfs | head -n 1 | awk -F 'UUID="' '{print $2}' | awk -F '"' '{print $1}')
+
+if [ -z "$UUID" ]; then
+    echo "Nenhuma partição NTFS encontrada."
+    exit 1
+fi
+
+# Adiciona a entrada ao /etc/fstab se não estiver lá
+if ! grep -q "$UUID" "$fstab_FILE"; then
+    echo "Adicionando entrada ao $fstab_FILE"
+    echo "# Adiciona partições NTFS na montagem do boot" | sudo tee -a "$fstab_FILE" > /dev/null
+    echo "UUID=$UUID $MOUNT_POINT ntfs defaults,uid=1000,gid=1000 0 0" | sudo tee -a "$fstab_FILE"
+else
+    echo "A entrada já existe em $fstab_FILE"
+fi
+
+# Testa a montagem
+sudo mount -a
+
+echo "Configuração de montagem automática finalizada com sucesso"
+
+
+# -----------------------------------------------------------------------
+
+echo "Adicionando alias"
+
+alias myntfs="cd /media/NTFS"
+alias mygithub = "cd /media/NTFS/00_MEUS_DOCUMENTOS_PC/00_PASTA_PC/03_ESTUDOS/GITHUB"
+
+echo "Alias adicionados com sucesso
