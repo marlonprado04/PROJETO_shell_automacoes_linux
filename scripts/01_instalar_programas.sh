@@ -48,7 +48,7 @@ sudo apt install grub-customizer -y 2>> "$LOG_FILE" || handle_error "Falha ao in
 sudo apt install gnome-clocks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar gnome-clocks via apt."
 sudo apt install tree -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar tree via apt."
 sudo apt install peek -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar peek via apt."
-sudo apt install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
+# sudo apt install exfat-utils -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-utils via apt."
 sudo apt install exfat-fuse -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar exfat-fuse via apt."
 sudo apt install whois -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar whois via apt."
 sudo apt install net-tools -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar net-tools via apt."
@@ -90,10 +90,9 @@ sudo snap install tldr 2>> "$LOG_FILE" || handle_error "Falha ao instalar tldr v
 sudo snap install ncdu 2>> "$LOG_FILE" || handle_error "Falha ao instalar ncdu via Snap."
 sudo snap install authy 2>> "$LOG_FILE" || handle_error "Falha ao instalar authy via Snap."
 sudo snap install ticktick 2>> "$LOG_FILE" || handle_error "Falha ao instalar ticktick via Snap."
-sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
+# sudo snap install okular 2>> "$LOG_FILE" || handle_error "Falha ao instalar okular via Snap."
 sudo snap install spotify 2>> "$LOG_FILE" || handle_error "Falha ao instalar spotify via Snap."
 sudo snap install obsidian --classic 2>> "$LOG_FILE" || handle_error "Falha ao instalar obsidian via Snap."
-sudo snap install flameshot 2>> "$LOG_FILE" || handle_error "Falha ao instalar flameshot via Snap."
 sudo snap install bitwarden 2>> "$LOG_FILE" || handle_error "Falha ao instalar bitwarden via Snap."
 
 # -----------------------------------------------------------
@@ -110,7 +109,7 @@ sudo apt install software-properties-common apt-transport-https wget -y || handl
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || handle_error "Falha ao adicionar a chave do microsoft-edge"
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" -y
 sudo apt update
-sudo apt install microsoft-edge-edge -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar microsoft-edge via apt"
+sudo apt install microsoft-edge-stable -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar microsoft-edge via apt"
 
 sudo apt install -y wget
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - || handle_error "Falha ao adicionar a chave do Google Chrome"
