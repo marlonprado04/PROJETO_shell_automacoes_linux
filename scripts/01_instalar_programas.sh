@@ -111,6 +111,7 @@ declare -a SNAP_CLASSIC_APPS=(
     code
     netbeans
     obsidian
+    intellij-idea-community
 )
 
 for APP in "${SNAP_CLASSIC_APPS[@]}"; do
