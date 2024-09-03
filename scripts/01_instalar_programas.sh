@@ -29,6 +29,7 @@ sudo apt install ubuntu-restricted-extras -y 2>> "$LOG_FILE" || handle_error "Fa
 # ---------------------------------------------------
 # Instalar programas via apt
 declare -a APT_PACKAGES=(
+    openjdk-17-jre-headless
     synaptic
     gnome-software
     gnome-sushi
