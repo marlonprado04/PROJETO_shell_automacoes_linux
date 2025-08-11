@@ -56,13 +56,29 @@ declare -a APT_PACKAGES=(
     neofetch
     python3-pip
     copyq
-    npm
     flameshot
 )
 
 for PACKAGE in "${APT_PACKAGES[@]}"; do
     sudo apt install "$PACKAGE" -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar $PACKAGE via apt."
 done
+
+# Instalar extensões para organização de janelas estilo Windows 11
+
+echo "Instalando extensões para gerenciamento de janelas (Snap Layouts estilo Windows 11)..."
+
+# Tiling Assistant: oferece sugestões de layout ao passar o mouse no botão de maximizar
+sudo apt install gnome-shell-extension-tiling-assistant -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar Tiling Assistant."
+
+# GNOME Tweaks: necessário para ativar extensões GNOME
+sudo apt install gnome-tweaks -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GNOME Tweaks."
+
+# GNOME Extension Manager: interface gráfica para ativar extensões facilmente
+sudo apt install gnome-shell-extension-manager -y 2>> "$LOG_FILE" || handle_error "Falha ao instalar GNOME Extension Manager."
+
+echo "Extensões de gerenciamento de janelas instaladas com sucesso."
+echo "Abra o GNOME Tweaks ou Extension Manager para ativar o Tiling Assistant."
+
 
 # ---------------------------------------------------
 # Instalar Flatpak e adicionar o Flathub
@@ -88,7 +104,6 @@ sudo snap install snap-store 2>> "$LOG_FILE" || handle_error "Falha ao instalar 
 
 # Instalar aplicativos com o Snap
 declare -a SNAP_APPS=(
-    code
     curl
     discord
     photogimp
