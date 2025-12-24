@@ -46,12 +46,13 @@ flameshot "Ferramenta de screenshots avançada" off \
 
 clear
 
-if [ -n "$apt_choices" ]; 
+if [ -n "$apt_choices" ]; then
     IFS=" " read -r -a packages <<< "$apt_choices"
-    for pkg in $apt_choices; do
+    for pkg in "${packages[@]}"; do
         sudo apt install "$pkg" -y 2>>"$LOG_FILE" || handle_error "Falha ao instalar $pkg"
     done
 fi
+
 
 echo "Instalação concluída. Verifique o log em $LOG_FILE."
 echo "Para ativar o Tiling Assistant, abra o GNOME Tweaks ou o Extension Manager."
@@ -59,48 +60,49 @@ echo "Para ativar o Tiling Assistant, abra o GNOME Tweaks ou o Extension Manager
 
 # -----------------------------
 # Flatpak
-flatpak_choices=$(dialog --checklist "FLATPAK - Selecione o que instalar:" 20 70 10 \
+flatpak_choices=$(dialog --checklist "FLATPAK - Selecione o que instalar:" 25 80 12 \
 com.calibre_ebook.calibre "Calibre" off \
 com.valvesoftware.Steam "Steam" off \
 com.obsproject.Studio "OBS Studio" off \
 it.mijorus.gearlever "Gear Lever" off \
+com.discordapp.Discord "Discord" off \
+com.spotify.Client "Spotify" off \
+org.videolan.VLC "VLC" off \
+com.bitwarden.desktop "Bitwarden" off \
+com.visualstudio.code "VS Code" off \
+md.obsidian.Obsidian "Obsidian" off \
+com.jetbrains.IntelliJ-IDEA-Community "IntelliJ Community" off \
+org.apache.netbeans "NetBeans" off \
 3>&1 1>&2 2>&3)
 
 clear
 
 if [ -n "$flatpak_choices" ]; then
-    # Instalar Flatpak
+    # Instalar Flatpak se não existir
     if ! command -v flatpak &>/dev/null; then sudo apt install flatpak -y; fi
-
 
     # Adicionar Flathub se não existir
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 2>>"$LOG_FILE" || handle_error "Falha ao adicionar Flathub."
 
     # Instalar os apps selecionados
     for app in $flatpak_choices; do
-        # remover aspas extras do dialog
         app_clean=$(echo $app | tr -d '"')
         flatpak install --system "$app_clean" -y 2>>"$LOG_FILE" || handle_error "Falha ao instalar $app_clean via Flatpak."
     done
 else
-    echo "Nenhum aplicativo selecionado." | tee -a "$LOG_FILE"
+    echo "Nenhum aplicativo Flatpak selecionado." | tee -a "$LOG_FILE"
 fi
 
 # -----------------------------
-
-
+# Snap
+# -----------------------------
 # Instalar Snap caso não esteja instalado
 if ! command -v snap &> /dev/null; then
     sudo apt install snapd -y 2>>"$LOG_FILE" || handle_error "Falha ao instalar o Snap."
 fi
 
-
-# Snap (normal)
+# Lista de Snap sem duplicatas de apps já no Flatpak
 snap_choices=$(dialog --checklist "SNAP - Selecione o que instalar:" 20 70 10 \
-discord "Discord" off \
-spotify "Spotify" off \
-vlc "VLC" off \
-bitwarden "Bitwarden" off \
 btop "btop" off \
 tldr "tldr" off \
 ncdu "ncdu" off \
@@ -117,25 +119,6 @@ if [ -n "$snap_choices" ]; then
     
     for app in $snap_choices; do
         sudo snap install "$app" 2>>"$LOG_FILE" || handle_error "Falha ao instalar $app via Snap."
-    done
-fi
-
-# -----------------------------
-# Snap classic
-snap_classic=$(dialog --checklist "SNAP CLASSIC:" 15 60 5 \
-code "VS Code" off \
-obsidian "Obsidian" off \
-intellij-idea-community "IntelliJ Community" off \
-netbeans "NetBeans" off \
-3>&1 1>&2 2>&3)
-
-clear
-
-if [ -n "$snap_classic" ]; then
-    snap_classic=$(echo "$snap_classic" | tr -d '"')
-    
-    for app in $snap_classic; do
-        sudo snap install "$app" --classic 2>>"$LOG_FILE" || handle_error "Falha ao instalar $app via Snap com --classic."
     done
 fi
 
