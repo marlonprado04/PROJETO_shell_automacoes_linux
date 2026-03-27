@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 
 LOG_FILE="log_instalacao.txt"
 > "$LOG_FILE"
@@ -7,7 +7,11 @@ handle_error() {
     echo "Erro: $1" | tee -a "$LOG_FILE"
 }
 
-# garante dialog
+# Adiciona repositório do AnyDesk antes de instalar os pacotes APT
+curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/anydesk.gpg
+echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+
+# Garante Dialog
 sudo apt update 2>>"$LOG_FILE" || handle_error "Falha ao atualizar repositórios."
 sudo apt install dialog -y 2>>"$LOG_FILE" || handle_error "Falha ao instalar dialog."
 
@@ -42,6 +46,8 @@ neofetch "Exibe informações do sistema no terminal" off \
 python3-pip "Gerenciador de pacotes Python" off \
 copyq "Gerenciador avançado de área de transferência" off \
 flameshot "Ferramenta de screenshots avançada" off \
+anydesk "Ferramenta de acesso remoto" off \
+
 3>&1 1>&2 2>&3)
 
 clear
