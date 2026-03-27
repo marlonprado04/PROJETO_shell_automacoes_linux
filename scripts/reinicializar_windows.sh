@@ -3,8 +3,8 @@
 # Lista as opções de entrada do grub
 # grep menuentry /boot/grub/grub.cfg
 
-# Seleciona a opção 2 (indice 1 do array) como opção para próxima reinicialização
-sudo grub-reboot 1
+# Seleciona a opção menuentry do "Windows 11" como opção para próxima reinicialização
+sudo grub-reboot "Windows 11"
 
-# Reinicializa o sistema
+# Reinicializa PC
 sudo reboot
